@@ -978,7 +978,7 @@ def decode(model, data, verbose=True):
     hypotheses = []
     begin_time = time.time()
 
-    if type(data[0]) is tuple:
+    if type(data) is tuple:
         for src_sent, tgt_sent in data:
             hyps = model.translate(src_sent)
             hypotheses.append(hyps)

@@ -17,7 +17,7 @@ class VocabEntry(object):
         self.word2id['</s>'] = 2
         self.word2id['<unk>'] = 3
 
-        self.id2word = {v: k for k, v in self.word2id.iteritems()}
+        self.id2word = {v: k for k, v in self.word2id}
 
     def __getitem__(self, word):
         return self.word2id.get(word, self.unk_id)
@@ -80,13 +80,13 @@ class Vocab(object):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--src_vocab_size', default=50000, type=int, help='source vocabulary size')
-    parser.add_argument('--tgt_vocab_size', default=50000, type=int, help='target vocabulary size')
+    parser.add_argument('--src_vocab_size', default=500000, type=int, help='source vocabulary size')
+    parser.add_argument('--tgt_vocab_size', default=500000, type=int, help='target vocabulary size')
     parser.add_argument('--include_singleton', action='store_true', default=False, help='whether to include singleton'
                                                                                         'in the vocabulary (default=False)')
 
-    parser.add_argument('--train_src', type=str, required=True, help='file of source sentences')
-    parser.add_argument('--train_tgt', type=str, required=True, help='file of target sentences')
+    parser.add_argument('--train_src', type=str, default='data/train.de-en.en', help='file of source sentences')
+    parser.add_argument('--train_tgt', type=str, default='data/train.de-en.de', help='file of target sentences')
 
     parser.add_argument('--output', default='vocab.bin', type=str, help='output vocabulary file')
 

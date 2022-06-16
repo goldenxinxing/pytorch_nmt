@@ -17,7 +17,7 @@ python nmt.py \
     --mode train \
     --vocab data/iwslt.vocab.bin \
     --save_to models/${model_name} \
-    --valid_niter 2400 \
+    --valid_niter 100 \
     --valid_metric ppl \
     --beam_size 5 \
     --batch_size 64 \

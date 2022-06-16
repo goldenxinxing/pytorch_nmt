@@ -19,7 +19,7 @@ With 256-dimensional LSTM hidden size, it achieves a training speed of 14000 wor
 python vocab.py
 ```
 
-* Vanilla Maximum Likelihood Training
+* Vanilla Maximum Likelihood Estimation Training
 
 ```
 . scripts/run_mle.sh
